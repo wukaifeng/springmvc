@@ -7,6 +7,33 @@
 <title>界面标题</title>
 </head>
 <body>
+
+<form action="testModel" method="post">
+	<button type="submit" value="submit"> testModel</button>
+</form>
+<br>
+<form action="testMap" method="post">
+	<button type="submit" value="submit"> testMap</button>
+</form>
+<br>
+<form action="testModelAndView" method="post">
+	<button type="submit" value="submit"> testModelAndView</button>
+</form>
+<br>
+<form action="testServlet" method="post">
+	<button type="submit" value="submit"> testUserObj</button>
+</form>
+<br>
+<form action="testUserObj/1" method="post">
+	<input name="userName" type="text" value="zhangsan">
+	<input name ="age" type="text" value="12">
+	<input name="salary" type="text" value="12.34"> 
+	<input name="address.province" type="text" value="上海">
+	<input name="address.city" type="text" value="花桥">
+	<button type="submit" value="submit"> testUserObj</button>
+</form>
+<br>
+
 <form action="testRestDelete/1" method="post">
 	<input type="hidden" name="_method" value="DELETE">
 	<button type="submit" value="submit"> rest delete</button>
