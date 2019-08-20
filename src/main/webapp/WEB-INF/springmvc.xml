@@ -16,6 +16,7 @@
 	<mvc:annotation-driven></mvc:annotation-driven>
 	<mvc:view-controller path="/hello" view-name="hello" />
 	<mvc:view-controller path="/fileUpload" view-name="fileUpload" />
+	<mvc:view-controller path="/fileDown" view-name="fileDown" />
 
 	<!-- 配置视图解析器 如何把handler 方法返回值解析为实际的物理视图 -->
 	<bean
@@ -26,9 +27,11 @@
 	<bean id="messageSource"
 		class="org.springframework.context.support.ResourceBundleMessageSource">
 		<!-- 表示语言配置文件是以language开头的文件（language_zh_CN.properties） -->
-		<property name="basename" value="classpath:i18n" />
+		<property name="basename">
+		  <value>i18n</value>
+		</property>
 		<!-- 语言区域里没有找到对应的国际化文件时，默认使用language.properties文件 -->
-		<!-- <property name="useCodeAsDefaultMessage" value="true" /> -->
+		 <property name="useCodeAsDefaultMessage" value="true" /> 
 	</bean>
 	<bean class="com.banksteel.exception.ExceptionHandle"></bean>
 	<!-- 多部分文件上传  -->
@@ -40,5 +43,9 @@
 	<mvc:interceptors>
 		<bean id="firstInterceptor"  class="com.banksteel.interceptor.FirstInterceptor"></bean>
 		<bean id="secondInterceptor" class="com.banksteel.interceptor.SecondInterceptor"></bean>
+		<!--  <bean id="localeChangeInterceptor"
+            class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+            <property name="paramName" value="lang" />
+     </bean> -->
 	</mvc:interceptors>
 </beans>
