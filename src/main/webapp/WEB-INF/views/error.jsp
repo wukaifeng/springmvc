@@ -7,12 +7,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>界面标题</title>
+<title>错误界面</title>
 </head>
 <body>
-<fmt:message key="i18n.username"></fmt:message>
-<fmt:message key="i18n.password"></fmt:message>
-	<a href="hello">hello</a>
-	<br> time: ${requestScope.time} timeSession: ${sessionScope.time}
+错误；${errorMsg }
 </body>
 </html>
