@@ -14,8 +14,8 @@
 	<context:component-scan
 		base-package="com.banksteel.controller"></context:component-scan>
 	<mvc:annotation-driven></mvc:annotation-driven>
-	<mvc:view-controller path="/hello"
-		view-name="hello" />
+	<mvc:view-controller path="/hello" view-name="hello" />
+	<mvc:view-controller path="/fileUpload" view-name="fileUpload" />
 
 	<!-- 配置视图解析器 如何把handler 方法返回值解析为实际的物理视图 -->
 	<bean
@@ -31,7 +31,12 @@
 		<!-- <property name="useCodeAsDefaultMessage" value="true" /> -->
 	</bean>
 	<bean class="com.banksteel.exception.ExceptionHandle"></bean>
-
+	<!-- 多部分文件上传  -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	     <property name="maxUploadSize" value="104857600" />
+	     <property name="maxInMemorySize" value="4096" />
+	     <property name="defaultEncoding" value="UTF-8"></property>
+	</bean>
 	<mvc:interceptors>
 		<bean id="firstInterceptor"  class="com.banksteel.interceptor.FirstInterceptor"></bean>
 		<bean id="secondInterceptor" class="com.banksteel.interceptor.SecondInterceptor"></bean>
