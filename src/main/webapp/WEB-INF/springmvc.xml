@@ -30,6 +30,7 @@
 		<!-- 语言区域里没有找到对应的国际化文件时，默认使用language.properties文件 -->
 		<!-- <property name="useCodeAsDefaultMessage" value="true" /> -->
 	</bean>
+	<bean class="com.banksteel.controller.ExceptionHandle"></bean>
 
 	<mvc:interceptors>
 		<bean id="firstInterceptor"  class="com.banksteel.interceptor.FirstInterceptor"></bean>
