@@ -30,6 +30,7 @@ public class HelloController {
 	@ModelAttribute  
 	public String testModeAttributes(String str) {
 		System.out.println("str:" +str);
+		
 		return "aaaaa";
 	}
 	
