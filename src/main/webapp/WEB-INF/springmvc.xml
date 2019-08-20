@@ -11,25 +11,29 @@
 		http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
 	<!-- 配置自动扫描的包 -->
-	<context:component-scan base-package="com.banksteel.controller"></context:component-scan>
+	<context:component-scan
+		base-package="com.banksteel.controller"></context:component-scan>
+	<mvc:annotation-driven></mvc:annotation-driven>
+	<mvc:view-controller path="/hello"
+		view-name="hello" />
 
 	<!-- 配置视图解析器 如何把handler 方法返回值解析为实际的物理视图 -->
-	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/views/"></property>
 		<property name="suffix" value=".jsp"></property>
 	</bean>
-	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
-        <!-- 表示语言配置文件是以language开头的文件（language_zh_CN.properties）-->
-        <property name="basename" value="classpath:i18n"/>
-        <!-- 语言区域里没有找到对应的国际化文件时，默认使用language.properties文件-->
-        <!-- <property name="useCodeAsDefaultMessage" value="true" /> -->
-    </bean>
-	<mvc:view-controller path="/hello" view-name="hello"/>
-	<mvc:annotation-driven></mvc:annotation-driven>
-	
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<!-- 表示语言配置文件是以language开头的文件（language_zh_CN.properties） -->
+		<property name="basename" value="classpath:i18n" />
+		<!-- 语言区域里没有找到对应的国际化文件时，默认使用language.properties文件 -->
+		<!-- <property name="useCodeAsDefaultMessage" value="true" /> -->
+	</bean>
+
 	<mvc:interceptors>
-	    <bean id="firstInterceptor" class="com.banksteel.interceptor.FirstInterceptor"></bean>
-	   <bean id="secondInterceptor" class="com.banksteel.interceptor.SecondInterceptor"></bean>
-	   
+		<bean id="firstInterceptor"  class="com.banksteel.interceptor.FirstInterceptor"></bean>
+		<bean id="secondInterceptor" class="com.banksteel.interceptor.SecondInterceptor"></bean>
+
 	</mvc:interceptors>
 </beans>
