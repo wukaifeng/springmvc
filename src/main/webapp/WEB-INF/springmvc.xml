@@ -64,4 +64,28 @@
             </set>
         </property>
     </bean>
+
+	<bean id="conversionService2"
+		class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+		<property name="formatters">
+			<set>
+				<bean class="com.banksteel.converter.UserFormatter">
+					<!-- <constructor-arg type="java.lang.String" value="yyyy-MM-dd"/> -->
+				</bean>
+			</set>
+		</property>
+	</bean>
+
+<!-- 	<mvc:annotation-driven
+		conversion-service="conversionService2" /> -->
+
+	<!-- <bean id="conversionService"
+		class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+		<property name="converters">
+			<set>
+				<bean
+					class="com.tiantian.blog.web.converter.StringArrayToAttachmentList" />
+			</set>
+		</property>
+	</bean> -->
 </beans>
