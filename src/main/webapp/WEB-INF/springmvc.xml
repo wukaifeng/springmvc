@@ -34,6 +34,7 @@
 		 <property name="useCodeAsDefaultMessage" value="true" /> 
 	</bean>
 	<bean class="com.banksteel.exception.ExceptionHandle"></bean>
+	<bean id="userConverter" class="com.banksteel.converter.UserConverter"></bean>
 	<!-- 多部分文件上传  -->
 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 	     <property name="maxUploadSize" value="104857600" />
@@ -48,4 +49,19 @@
             <property name="paramName" value="lang" />
      </bean> -->
 	</mvc:interceptors>
+	 <!-- 配置conversionService -->
+	<mvc:annotation-driven conversion-service="conversionService"></mvc:annotation-driven>
+    <!-- 
+        1.先配置conversionService
+        2.在 mvc:annotation-driven 标签 添加conversion-service="conversionService"
+     -->
+    <bean id="conversionService"
+        class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+            <!--userConverter UserConverter类的 首字母小写即可  -->
+                <ref bean="userConverter"/>
+            </set>
+        </property>
+    </bean>
 </beans>
