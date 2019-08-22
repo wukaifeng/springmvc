@@ -33,6 +33,7 @@
 		<!-- 语言区域里没有找到对应的国际化文件时，默认使用language.properties文件 -->
 		 <property name="useCodeAsDefaultMessage" value="true" /> 
 	</bean>
+<<<<<<< HEAD
 	<bean class="com.banksteel.exception.ExceptionHandle"></bean>
 	<bean id="userConverter" class="com.banksteel.converter.UserConverter"></bean>
 	<!-- 多部分文件上传  -->
@@ -41,6 +42,10 @@
 	     <property name="maxInMemorySize" value="4096" />
 	     <property name="defaultEncoding" value="UTF-8"></property>
 	</bean>
+=======
+	<bean class="com.banksteel.controller.ExceptionHandle"></bean>
+
+>>>>>>> branch 'master' of https://github.com/wukaifeng/springmvc.git
 	<mvc:interceptors>
 		<bean id="firstInterceptor"  class="com.banksteel.interceptor.FirstInterceptor"></bean>
 		<bean id="secondInterceptor" class="com.banksteel.interceptor.SecondInterceptor"></bean>

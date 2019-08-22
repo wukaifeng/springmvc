@@ -35,6 +35,20 @@ public class ExceptionController {
         System.out.println(" testRuntimeException-RuntimeException" + e);
         return "error";
     }
+//    @ExceptionHandler({ArithmeticException.class})
+//    public ModelAndView testArithmeticException(Exception e) {
+//        ModelAndView modelAndView = new ModelAndView();
+//        modelAndView.addObject("errorMsg", e);
+//        modelAndView.setViewName("error");
+//        System.out.println("testArithmeticException-ArithmeticException:" + e);
+//        return modelAndView;
+//    }
+//
+//    @ExceptionHandler({RuntimeException.class})
+//    public String testRuntimeException(Exception e) {
+//        System.out.println(" testRuntimeException-RuntimeException" + e);
+//        return "error";
+//    }
 
     @RequestMapping(value = "testException/{i}", method = RequestMethod.GET)
     public String testException1(@PathVariable(value = "i") int i) {
