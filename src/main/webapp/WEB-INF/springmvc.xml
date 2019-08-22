@@ -42,10 +42,7 @@
 	     <property name="maxInMemorySize" value="4096" />
 	     <property name="defaultEncoding" value="UTF-8"></property>
 	</bean>
-=======
 	<bean class="com.banksteel.controller.ExceptionHandle"></bean>
-
->>>>>>> branch 'master' of https://github.com/wukaifeng/springmvc.git
 	<mvc:interceptors>
 		<bean id="firstInterceptor"  class="com.banksteel.interceptor.FirstInterceptor"></bean>
 		<bean id="secondInterceptor" class="com.banksteel.interceptor.SecondInterceptor"></bean>
